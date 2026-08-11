@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Muhammad Albagir Alattas — Ekonomi, digital marketing, analisis data, dan pengembangan organisasi.">
+  <title>Muhammad Albagir Alattas — Portfolio</title>
+  <style>
+    :root{
+      --bg:#f6f7f4; --surface:#fff; --text:#17211b; --muted:#66736b;
+      --accent:#1d6b4f; --accent2:#dcece4; --line:#dfe5e0; --dark:#12251d;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);background:var(--bg);line-height:1.65}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+    nav{position:sticky;top:0;z-index:20;background:rgba(246,247,244,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:-.03em}.brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:24px;font-size:14px;color:var(--muted)}
+    .nav-links a:hover{color:var(--accent)}
+    .hero{padding:105px 0 80px;background:linear-gradient(135deg,#eef4ef 0%,#f6f7f4 55%,#e8f1ec 100%)}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border:1px solid #cbdcd2;border-radius:999px;
+      color:var(--accent);font-size:13px;font-weight:700;background:#f8fcf9}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+    h1{font-size:clamp(44px,7vw,76px);line-height:1.02;letter-spacing:-.06em;margin:20px 0}
+    h1 span{color:var(--accent)} .lead{font-size:19px;color:var(--muted);max-width:700px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;padding:12px 18px;border-radius:12px;font-weight:700;border:1px solid var(--line)}
+    .btn.primary{background:var(--accent);color:white;border-color:var(--accent)} .btn.secondary{background:white}
+    .hero-card{background:var(--dark);color:white;border-radius:28px;padding:30px;box-shadow:0 24px 70px rgba(18,37,29,.16)}
+    .hero-card .mark{width:76px;height:76px;border-radius:22px;background:#dcece4;color:var(--accent);
+      display:grid;place-items:center;font-size:27px;font-weight:900;margin-bottom:30px}
+    .hero-card p{color:#c9d7d0;margin:8px 0}.hero-card strong{font-size:18px}
+    section{padding:92px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+    .kicker{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:800}
+    h2{font-size:42px;line-height:1.1;letter-spacing:-.04em;margin:8px 0 0}.section-intro{max-width:500px;color:var(--muted)}
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+    .about-box{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px}
+    .about-box h3{margin-top:0}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .fact{padding:16px;border-radius:14px;background:var(--accent2)}.fact small{display:block;color:var(--muted)}
+    .timeline{position:relative;margin-left:10px}.item{padding:0 0 42px 35px;border-left:2px solid #cbd8d1;position:relative}
+    .item:last-child{padding-bottom:0}.item:before{content:"";position:absolute;left:-8px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+    .item h3{margin:0 0 5px;font-size:20px}.meta{font-size:14px;color:var(--accent);font-weight:700}.item p{color:var(--muted);margin:10px 0 0}
+    .project{display:grid;grid-template-columns:1fr 1fr;background:var(--dark);color:white;border-radius:30px;overflow:hidden}
+    .project-copy{padding:45px}.project-label{color:#a8cbbb;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    .project h3{font-size:32px;line-height:1.15;margin:12px 0}.project p{color:#c9d7d0}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+    .tag{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.1);font-size:12px}
+    .project-visual{min-height:330px;background:radial-gradient(circle at 50% 45%,#347d61 0,#1d6b4f 27%,#12251d 65%);display:grid;place-items:center}
+    .visual-ring{width:210px;height:210px;border:1px solid rgba(255,255,255,.35);border-radius:50%;display:grid;place-items:center;position:relative}
+    .visual-ring:after{content:"DATA";font-weight:900;letter-spacing:.2em;color:white}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .skill{background:white;border:1px solid var(--line);padding:22px;border-radius:18px}.skill h3{margin:0 0 8px}.skill p{margin:0;color:var(--muted);font-size:14px}
+    .contact{background:var(--accent2);border-radius:30px;padding:45px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+    .contact h2{max-width:650px}.contact-links{display:flex;gap:10px;flex-wrap:wrap}
+    footer{padding:35px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+    @media(max-width:800px){
+      .nav-links{display:none}.hero-grid,.about,.project{grid-template-columns:1fr}.hero{padding-top:70px}
+      .skills{grid-template-columns:1fr}.section-head{display:block}.section-intro{margin-top:14px}.project-visual{min-height:250px}
+      .contact{display:block;padding:30px}
+    }
+  </style>
+</head>
+<body>
+<nav><div class="container nav-inner">
+  <a class="brand" href="#">ALBAGIR<span>.</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#project">Project</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Economics • Digital Marketing • Data</div>
+      <h1>Muhammad Albagir <span>Alattas</span></h1>
+      <p class="lead">Lulusan S1 Ekonomi dengan peminatan Ekonomi Islam, dengan pengalaman di perbankan syariah, asuransi, organisasi, pemasaran digital, dan analisis data.</p>
+      <div class="actions">
+        <a class="btn primary" href="#project">Lihat Project</a>
+        <a class="btn secondary" href="#contact">Hubungi Saya</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="mark">MA</div>
+      <strong>Analytical. Collaborative. Adaptive.</strong>
+      <p>Berkomitmen mengimplementasikan pendekatan berbasis data dan inovasi untuk mendukung pengembangan organisasi, pembangunan ekonomi, dan pemberdayaan masyarakat.</p>
+    </aside>
+  </div>
+</header>
+
+<section id="about"><div class="container">
+  <div class="section-head"><div><div class="kicker">01 — About</div><h2>Tentang Saya</h2></div>
+  <p class="section-intro">Profil yang menggabungkan perspektif ekonomi dengan kemampuan komunikasi, organisasi, dan teknologi.</p></div>
+  <div class="about">
+    <div class="about-box">
+      <h3>Profil</h3>
+      <p>Saya memiliki kompetensi dalam pengembangan sumber daya manusia, pemasaran digital, dan analisis data yang diperoleh melalui pengalaman akademik dan organisasi. Saya memiliki kemampuan analitis, komunikasi, kepemimpinan, kerja sama tim, serta pemecahan masalah.</p>
+    </div>
+    <div class="about-box">
+      <h3>Academic Snapshot</h3>
+      <div class="facts">
+        <div class="fact"><small>Universitas</small><b>Universitas Syiah Kuala</b></div>
+        <div class="fact"><small>Program</small><b>Sarjana Ekonomi</b></div>
+        <div class="fact"><small>IPK</small><b>3.64 / 4.00</b></div>
+        <div class="fact"><small>Peminatan</small><b>Ekonomi Islam</b></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="container">
+  <div class="section-head"><div><div class="kicker">02 — Experience</div><h2>Pengalaman</h2></div></div>
+  <div class="timeline">
+    <div class="item"><div class="meta">Agustus — Desember 2024</div><h3>Bank Sumut (Syariah) — Layanan Operasi</h3><p>Magang Merdeka Kampus Belajar pada Financing & Development Head Office. Melakukan rotasi di divisi Pembiayaan, Pendanaan & Layanan, serta Pengembangan; mendukung perencanaan, pengembangan, dan peluncuran produk perbankan; serta membantu koordinasi rapat, dokumentasi, dan pekerjaan administratif-operasional.</p></div>
+    <div class="item"><div class="meta">Juli — Desember 2024</div><h3>Allianz SE — Agen Asuransi Syariah</h3><p>Mengenalkan dan menawarkan produk asuransi jiwa, memberikan edukasi tentang perlindungan keuangan jangka panjang, membangun komunikasi dengan calon nasabah, serta memberikan konsultasi dan solusi sesuai kebutuhan perlindungan.</p></div>
+    <div class="item"><div class="meta">Januari — Juni 2023</div><h3>Organisasi Mahasiswa Fakultas Ekonomi dan Bisnis Sumatera Utara</h3><p>Kepala Bidang Keagamaan di Universitas Syiah Kuala. Memimpin perencanaan dan pelaksanaan program kerja, bekerja sama dengan pihak eksternal, serta mengelola dokumentasi foto dan video kegiatan.</p></div>
+    <div class="item"><div class="meta">Oktober 2025</div><h3>Islamic Economics Scientific Festival — Ketua Bidang Acara Nasional</h3><p>Bertanggung jawab merencanakan dan mengelola rangkaian acara sebagai bagian dari panitia penyelenggara.</p></div>
+  </div>
+</div></section>
+
+<section id="project"><div class="container">
+  <div class="section-head"><div><div class="kicker">03 — Featured Project</div><h2>Project Akademik</h2></div></div>
+  <div class="project">
+    <div class="project-copy">
+      <div class="project-label">Undergraduate Thesis</div>
+      <h3>The Effects of eWOM, Perceived Risk, and Social Media Marketing on Purchasing Decisions for Muslim Fashion via Instagram in Banda Aceh</h3>
+      <p>Topik penelitian yang mengkaji pengaruh electronic word of mouth, perceived risk, dan social media marketing terhadap keputusan pembelian fashion Muslim melalui Instagram di Banda Aceh.</p>
+      <div class="tags"><span class="tag">Research</span><span class="tag">Social Media</span><span class="tag">Consumer Behavior</span><span class="tag">Data Analysis</span></div>
+    </div>
+    <div class="project-visual"><div class="visual-ring"></div></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="container">
+  <div class="section-head"><div><div class="kicker">04 — Skills</div><h2>Keahlian</h2></div></div>
+  <div class="skills">
+    <div class="skill"><h3>Business & Analysis</h3><p>Analisis Data, Manajemen Bisnis, Penyusunan Laporan, Strategi Penjualan, Layanan Pelanggan.</p></div>
+    <div class="skill"><h3>Digital</h3><p>Digital Marketing, Manajemen Media Sosial, Canva, CapCut, Google Workspace.</p></div>
+    <div class="skill"><h3>Productivity</h3><p>Microsoft Word, Excel, PowerPoint, Google Docs, Sheets, Drive, IBM SPSS Statistics.</p></div>
+    <div class="skill"><h3>Leadership</h3><p>Kepemimpinan, Public Speaking, komunikasi efektif, kolaborasi tim, dan manajemen waktu.</p></div>
+    <div class="skill"><h3>Creative & Problem Solving</h3><p>Kreativitas, ketelitian, adaptasi, dan pemecahan masalah.</p></div>
+    <div class="skill"><h3>Languages</h3><p>Bahasa Indonesia (Aktif) dan Bahasa Inggris (Pasif).</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="container">
+  <div class="contact">
+    <div><div class="kicker">05 — Contact</div><h2>Mari terhubung dan berdiskusi tentang peluang berikutnya.</h2></div>
+    <div class="contact-links">
+      <a class="btn primary" href="mailto:albagirlattas15@gmail.com">Email</a>
+      <a class="btn secondary" href="tel:+6281375292568">0813 7529 2568</a>
+      <a class="btn secondary" href="https://wa.me/6281375292568" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/muhammad-albagir-alattas-97516630a" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="container">© 2026 Muhammad Albagir Alattas. Portfolio.</div></footer>
+</body>
+</html>
